@@ -1,0 +1,34 @@
+# Smart-X IoT Mesh Ecosystem - final PoE
+#   docker compose up --build      API -> http://localhost:5080   console -> http://localhost:5173
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5080:8080"
+    environment:
+      # Firebase project ID comes from backend/SmartX.Api/appsettings.json (copied into the image).
+      # To override it here instead, uncomment:
+      # - Firebase__ProjectId=your-project-id
+      # Key the simulated ESP32 fleet uses to post telemetry (devices don't log in as people).
+      - Devices__ApiKey=${DEVICE_API_KEY:-smartx-esp32-fleet-key-2026}
+      # Gateway CPU budget - lower it to make the priority-lane bypass easier to see.
+      - Gateway__ProcessingRatePerSecond=60
+      - Gateway__HeartbeatTimeoutSeconds=12
+      # Built-in ESP32 fleet simulator posts to the API over HTTP (set false to use only your own devices).
+      - Simulator__Enabled=true
+    volumes:
+      - api-uploads:/app/uploads
+
+  frontend:
+    # nginx serving the static React console (see frontend/Dockerfile)
+    build:
+      context: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+
+volumes:
+  api-uploads:

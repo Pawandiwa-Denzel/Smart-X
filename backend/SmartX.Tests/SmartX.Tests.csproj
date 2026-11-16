@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Self-checking test runner for the final PoE data structures.
+    No NuGet packages needed: run it with  dotnet run (from backend/SmartX.Tests)
+    Exit code 0 = every check passed, 1 = at least one failed.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="..\SmartX.Api\SmartX.Api.csproj" />
+  </ItemGroup>
+
+</Project>

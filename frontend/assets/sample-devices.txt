@@ -1,0 +1,11 @@
+# Smart-X device list - upload on the Sensor Data Ingestion tab ("Import device list")
+# Format: MAC, Name, Location, Category   (Category = Environmental | Power | Actuator)
+MAC, Name, Location, Category
+AA:BB:CC:01:01, Moisture Sensor D, Facility B / Zone 3 / Hydroponics Bay 4, Environmental
+AA:BB:CC:01:02, Moisture Sensor E, Facility B / Zone 3 / Hydroponics Bay 5, Environmental
+AA:BB:CC:01:03, Temperature Node F, Facility B / Zone 3 / Nursery, Environmental
+AA:BB:CC:01:04, Smart Meter - Cold Room, Facility B / Zone 4 / Cold Room, Power
+AA:BB:CC:01:05, Pump B, Facility B / Zone 3 / Pump House, Actuator
+AA:BB:CC:01:06, Misting Valve 3, Facility B / Zone 3 / Nursery, Actuator
+AA:BB:CC:01:07 | Humidity Sensor G | Facility B / Zone 4 / Seed Store | Environmental
+AA-BB-CC-01-08; Smart Relay 2; Facility B / Zone 4 / Cold Room; Actuator

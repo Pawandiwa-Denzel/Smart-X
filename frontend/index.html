@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Smart-X Gateway Console</title>
+<meta name="description" content="Smart-X IoT mesh gateway console - live telemetry, priority alerting and predictive actions." />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<!-- Firebase Authentication (compat SDK) + this project's Firebase config -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="firebase-config.js"></script>
+<link rel="stylesheet" href="style.css?v=20261110-1" />
+</head>
+<body>
+<div id="root"></div>
+<!-- Order matters: shared helpers first, the App shell last. -->
+<script type="text/babel" src="shared.jsx?v=20261110-1"></script>
+<script type="text/babel" src="landing.jsx?v=20261110-1"></script>
+<script type="text/babel" src="auth.jsx?v=20261110-1"></script>
+<script type="text/babel" src="ingestion.jsx?v=20261110-1"></script>
+<script type="text/babel" src="commandstream.jsx?v=20261110-1"></script>
+<script type="text/babel" src="topology.jsx?v=20261110-1"></script>
+<script type="text/babel" src="app.jsx?v=20261110-1"></script>
+</body>
+</html>
